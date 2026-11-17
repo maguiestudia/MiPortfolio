@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193.53 80.2">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Poppins-Bold, Poppins;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 33.95px;
+      }
+
+      .cls-3 {
+        font-family: Poppins-Light, Poppins;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <text class="cls-2" transform="translate(0 28.85)"><tspan class="cls-3"><tspan x="0" y="0">Magdalena</tspan></tspan><tspan class="cls-1"><tspan x="0" y="30.77">Balo</tspan></tspan></text>
+  </g>
+</svg>
