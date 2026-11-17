@@ -1,0 +1,302 @@
+/* ==========================================================
+   SECCIONES: Servicios, Marcas, Sobre mí, Contacto, Footer
+   Se carga DESPUÉS de styles.css y grilla.css (usa sus variables)
+   ========================================================== */
+
+:root {
+    --gris-claro: #EFEFEF;
+}
+
+/* Títulos de sección (mismo estilo que "Trabajos") */
+.servicios h2,
+.sobre-mi h2,
+.contacto h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+/* ---------- SERVICIOS ---------- */
+.servicios {
+    background-color: var(--gris-claro);
+    padding: 100px var(--lateral);
+}
+
+.servicios__lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 20px;
+}
+
+.servicio {
+    padding: 0 30px;
+}
+
+.servicio:first-child {
+    padding-left: 0;
+}
+
+/* Línea separadora entre columnas */
+.servicio + .servicio {
+    border-left: 1px solid var(--gris);
+}
+
+.servicio h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.servicio p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+/* ---------- MARCAS (sobre el margen externo) ---------- */
+.marcas {
+    background-color: var(--negro);
+    padding: 40px var(--margen-externo);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.marcas h2 {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: var(--verde);
+}
+
+.marcas__logos {
+    list-style: none;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.marcas__logos img {
+    height: var(--alto, 32px);
+    width: auto;
+}
+
+.logo-castelli {
+    --alto: 32px; 
+}
+
+.logo-laemperatriz { 
+     --alto: 20px; 
+    }
+
+.logo-unigobe {
+    --alto: 18px; 
+}
+
+.logo-reina { 
+    --alto: 35px;
+}
+
+.logo-lacolgamos { 
+    --alto: 25px; 
+}
+
+/* ---------- SOBRE MÍ ---------- */
+.sobre-mi {
+    padding: 100px var(--lateral);
+}
+
+.sobre-mi__contenido {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding-top: 30px;
+}
+
+.sobre-mi__texto {
+    flex: 1;
+}
+
+.sobre-mi__texto p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.sobre-mi__foto {
+    flex: 0 0 400px;
+}
+
+.sobre-mi__foto img {
+    width: 100%;
+    aspect-ratio: 10 / 11;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- CONTACTO ---------- */
+.contacto {
+    padding: 40px var(--lateral) 100px;
+}
+
+.contacto__caja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 20px;
+    padding: 60px 40px;
+    background-color: var(--gris-claro);
+    border: 2px solid var(--gris);
+}
+
+.contacto__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.contacto__form h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.contacto__form input,
+.contacto__form textarea {
+    background-color: var(--verde);
+    border: none;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--negro);
+}
+
+.contacto__form ::placeholder {
+    color: #3d6b2a;
+}
+
+.contacto__form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contacto__form input:focus,
+.contacto__form textarea:focus {
+    outline: 2px solid var(--negro);
+}
+
+/* Botón Enviar (pequeño, no ocupa todo el ancho) */
+.btn--enviar {
+    align-self: flex-start;
+    border: none;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Instagram y Whatsapp, con la línea vertical a la izquierda */
+.contacto__redes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 2px solid var(--negro);
+    padding: 20px 0 20px 60px;
+    width: 310px;
+}
+
+.btn--icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.btn--icono img {
+    width: 22px;
+    height: 22px;
+}
+
+/* ---------- FOOTER (sobre el margen externo) ---------- */
+.footer {
+    background-color: var(--negro);
+    color: var(--blanco);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.4fr 1.4fr;
+    align-items: center;
+    gap: 20px;
+    padding: 30px var(--margen-externo);
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+.footer a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--verde);
+}
+
+.footer__logo img {
+    height: 40px;
+    width: auto;
+}
+
+.footer__nav ul {
+    list-style: none;
+}
+
+/* Los datos de contacto van en verde, como en la maqueta */
+.footer__datos a {
+    color: var(--verde);
+}
+
+.footer__datos p + p {
+    margin-top: 20px;
+}
+
+.footer__derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    text-align: right;
+}
+
+/* Los íconos de redes reutilizan .redes, pero sin el margen del header */
+.footer .redes {
+    margin-right: 0;
+}
+
+/* Mensaje de resultado del formulario */
+.contacto__aviso {
+    font-size: 0.8rem;
+    font-weight: 400;
+    min-height: 1.2em;
+}
+
+.contacto__aviso--ok {
+    color: #2c6b1a;
+}
+
+.contacto__aviso--error {
+    color: #b3261e;
+}
+
+.btn--enviar:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}

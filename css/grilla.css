@@ -1,0 +1,87 @@
+/* ==========================================================
+   GRILLA
+   Se carga DESPUÉS de styles.css y ANTES de secciones.css.
+   Define las dos líneas de grilla y acomoda lo que viene de styles.css.
+
+   --margen-externo → header, footer, franja de marcas y flechas de los carruseles
+   --lateral        → títulos y contenido de las secciones (margen interno)
+                      Es el espacio externo + lugar para las flechas, y en pantallas
+                      grandes el contenido se centra con un ancho máximo de 1100px.
+   ========================================================== */
+
+:root {
+    --margen-externo: 75px;
+    --lateral: max(calc(var(--margen-externo) + 50px), calc((100% - 1100px) / 2));
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --margen-externo: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --margen-externo: 20px;
+        --lateral: 20px;
+    }
+}
+
+/* ---------- Header: logo y redes sobre el margen externo ---------- */
+.header {
+    padding: 5px var(--margen-externo);
+}
+
+.logo img {
+    margin-left: 0;
+}
+
+.redes {
+    margin-right: 0;
+}
+
+.nav {
+    margin-right: 60px;
+}
+
+.nav__list {
+    margin-right: 0;
+}
+
+/* ---------- Hero: texto y botones sobre el margen interno ---------- */
+.carrusel__slide:first-child {
+    padding-inline: var(--lateral);
+}
+
+.hero__texto {
+    margin-left: 0;
+    padding: 12px 0;
+}
+
+.hero__botones {
+    margin-right: 0;
+}
+
+/* Flechas de los dos carruseles sobre el margen externo */
+.carrusel__btn--prev {
+    left: var(--margen-externo);
+}
+
+.carrusel__btn--next {
+    right: var(--margen-externo);
+}
+
+/* ---------- Trabajos ---------- */
+.trabajos {
+    padding: 100px 0;
+}
+
+.trabajos h2 {
+    margin-left: var(--lateral);
+}
+
+/* Las cards arrancan justo en la línea interna.
+   Se resta el padding de 20px que le deja lugar a las sombras. */
+.trabajos__ventana {
+    margin-inline: calc(var(--lateral) - 20px);
+}

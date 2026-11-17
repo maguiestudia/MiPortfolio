@@ -1,0 +1,249 @@
+/* ==========================================================
+   RESPONSIVE
+   Se carga al FINAL (después de styles, grilla y secciones).
+   Los márgenes de la grilla ya se achican solos desde grilla.css,
+   acá solo se acomoda el resto.
+   Cortes: 1024px (tablet) · 900px (hero apilado) · 768px (celular)
+   ========================================================== */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+
+  /* Trabajos: se ven 2 cards a la vez (el JS lee esta variable) */
+  .trabajos__track {
+    --visibles: 2;
+  }
+
+  /* Servicios */
+  .servicio {
+    padding: 0 20px;
+  }
+
+  /* Marcas */
+  .marcas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .marcas__logos {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px 40px;
+  }
+
+  /* Sobre mí */
+  .sobre-mi__contenido {
+    gap: 40px;
+  }
+
+  .sobre-mi__foto {
+    flex: 0 0 300px;
+  }
+
+  /* Contacto */
+  .contacto__caja {
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .contacto__redes {
+    padding-left: 30px;
+    width: 280px;
+  }
+
+  /* Footer */
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* ---------- Hero apilado: cuando el texto y los botones ya no entran en fila ---------- */
+@media (max-width: 900px) {
+
+  .carrusel__slide:first-child {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .hero__texto {
+    padding: 0;
+    text-align: center;
+  }
+
+  /* La línea vertical pasa a ser horizontal */
+  .hero__botones {
+    border-left: none;
+    border-top: 2px solid var(--gris);
+    padding: 20px 0 0;
+    width: min(250px, 70%);
+  }
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 768px) {
+
+  /* Header: logo + redes arriba, menú abajo en una segunda fila */
+  .header {
+    flex-wrap: wrap;
+    padding: 8px var(--margen-externo);
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    margin: 8px 0 0;
+  }
+
+  .nav__list {
+    justify-content: center;
+    gap: 22px;
+  }
+
+  /* Hero: el header ahora mide ~90px; svh evita problemas con la barra del navegador del celu */
+  .carrusel__slide {
+    height: calc(100svh - 90px);
+    min-height: 520px;
+  }
+
+  .hero__texto {
+    padding: 0 30px;
+  }
+
+  .hero__texto h1 {
+    font-size: 3rem;
+  }
+
+  .hero__rol,
+  .hero__bajada {
+    font-size: 1rem;
+  }
+
+  /* Flechas más chicas */
+  .carrusel__btn img {
+    width: 22px;
+    height: auto;
+  }
+
+  /* Frase */
+  .frase {
+    padding: 60px 30px;
+  }
+
+  .frase h2,
+  .frase p {
+    font-size: 1.4rem;
+  }
+
+  /* Secciones con menos aire arriba y abajo */
+  .trabajos,
+  .servicios,
+  .sobre-mi {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* Trabajos: de a una card. Las flechas pasan a flotar sobre la card
+     (en celular no hay lugar a los costados) */
+  .trabajos__track {
+    --visibles: 1;
+  }
+
+  .trabajos__carrusel .carrusel__btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  .trabajos__carrusel .carrusel__btn--prev {
+    left: 30px;
+  }
+
+  .trabajos__carrusel .carrusel__btn--next {
+    right: 30px;
+  }
+
+  /* Servicios: una columna, con línea arriba en vez de al costado */
+  .servicios__lista {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .servicio,
+  .servicio:first-child {
+    padding: 0;
+  }
+
+  .servicio + .servicio {
+    border-left: none;
+    border-top: 1px solid var(--gris);
+    padding-top: 30px;
+  }
+
+  /* Marcas */
+  .marcas {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .marcas__logos img {
+    height: calc(var(--alto, 32px) * 0.8);
+  }
+
+  /* Sobre mí: texto y después la foto */
+  .sobre-mi__contenido {
+    flex-direction: column;
+  }
+
+  .sobre-mi__foto {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  /* Contacto: formulario arriba, botones abajo */
+  .contacto {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+
+  .contacto__caja {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .contacto__redes {
+    width: 100%;
+    max-width: 380px;
+    border-left: none;
+    border-top: 2px solid var(--negro);
+    padding: 30px 0 0;
+  }
+
+  /* Footer: todo en una columna y centrado */
+  .footer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer__derecha {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Respeta a quienes tienen desactivadas las animaciones en su dispositivo 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}*/
